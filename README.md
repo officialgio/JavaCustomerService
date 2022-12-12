@@ -5,7 +5,7 @@ This is Customer Service Project
 
 <p align="center">
 # N-Tier Architecture
-    <img width="400" src="./screenshots/ExistingAccount.gif">
+<img src="/img/ntier.png?raw=true" alt="Diagram" width="800" height="500">
 </p>
 
 <p align="center">
