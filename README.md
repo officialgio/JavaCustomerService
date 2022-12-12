@@ -3,14 +3,17 @@
 This is Customer Service Project
 
 
+<p align="center">
 # N-Tier Architecture
+    <img width="400" src="./screenshots/ExistingAccount.gif">
+</p>
 
-<img src="/img/ntier.png?raw=true" alt="Diagram" width="400" height="500">
-
-
+<p align="center">
 # Model
 
-<img src="/img/model.png?raw=true" alt="Diagram" width="400" height="500">
+<img src="/img/model.png?raw=true" alt="Diagram" width="800" height="500">
+</p>
+
 
 
 
