@@ -1,5 +1,6 @@
 package com.giovanny;
 
+import com.giovanny.Exception.ResourceNotFoundException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,6 @@ public class Main {
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
-
     }
 
     @GetMapping
@@ -36,5 +36,21 @@ public class Main {
         customer.setEmail(request.email);
         customer.setAge(request.age);
         customerRepository.save(customer);
+    }
+
+    @DeleteMapping("{customerId}")
+    public void deleteCustomer(@PathVariable("customerId") Integer id) {
+        customerRepository.deleteById(id);
+    }
+
+    @PutMapping("{customerId}")
+    public String deleteCustomer(@PathVariable("customerId") Integer id, @RequestBody NewCustomerRequest request) {
+        Customer updatedEmployee = customerRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Customer doesn't exist with id: " + id));
+        updatedEmployee.setName(request.name);
+        updatedEmployee.setEmail(request.email);
+        updatedEmployee.setAge(request.age);
+        customerRepository.save(updatedEmployee);
+        return "Updated successfully!";
     }
 }
